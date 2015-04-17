@@ -49,7 +49,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1866465280
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12562643968
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
 
 # Releasetools
 #TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/s3ve3g
@@ -62,7 +62,18 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 #       hostapd.te \
 #       platform_app.te
 
-#Bliss-Config
-TARGET_TC_KERNEL := "4.8"
+# BlissPop Configs
+TARGET_TC_ROM := 4.8-sm
+TARGET_TC_KERNEL := 4.9-linaro
+BLISSIFY := true
+BLISS_O3 := true
+BLISS_STRICT := false
+BLISS_GRAPHITE := true
+BLISS_KRAIT := true
+BLISS_PIPE := true
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
+
+#SaberMod
+-include vendor/bliss/config/sm.mk
 

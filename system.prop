@@ -1,4 +1,6 @@
 # System.prop for matissewifi
+ro.product.device=matissewifi
+ro.product.model=SM-T530
 
 # Camera
 camera2.portability.force_api=1
@@ -8,8 +10,6 @@ lockscreen.rot_override=true
 ro.hdcp2.rx=tz
 ro.qualcomm.cabl=1
 ro.secwvk=144
-ro.sf.lcd_density=160
-qemu.hw.mainkeys=1 
 
 # gps
 persist.gps.qc_nlp_in_use=0
@@ -35,7 +35,10 @@ ro.secure=0
 # Wi-Fi
 wifi.interface=wlan0
 ro.radio.noril=yes
-ro.carrier=wifi-only
 
-ro.product.device=matissewifi
-ro.product.model=SM-T530
+# GCC Build Prop Lines
+ro.sm.flags=Extreme
+ro.sm.android=4.8.5-(SaberMod-4.8.x_android-graphite)-20150210-(release)
+ro.sm.kernel=4.9-linaro
+
+

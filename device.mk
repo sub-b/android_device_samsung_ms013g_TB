@@ -66,5 +66,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    persist.sys.usb.config=mtp
+
+# Override build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=160 \
+    ro.carrier=wifi-only
+
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
