@@ -17,16 +17,16 @@
 
 TARGET_OTA_ASSERT_DEVICE := matissewifi
 
-LOCAL_PATH := device/samsung/ms013g
+LOCAL_PATH := device/samsung/matissewifi
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # CMHW
-#BOARD_HARDWARE_CLASS += device/samsung/ms013g/cmhw
+#BOARD_HARDWARE_CLASS += device/samsung/matissewifi/cmhw
 
 # Init
-#TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_s3ve3g.c
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matissewifi.c
 #TARGET_UNIFIED_DEVICE := true
 
 # Kernel
@@ -37,26 +37,26 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
-TARGET_KERNEL_CONFIG := cm-matissewifi_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
+TARGET_KERNEL_CONFIG := msm8226-cm_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8226-cm_matissewifi_defconfig
 #TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 1024
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A7DEA0
+#BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A7DEA0
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1866465280
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12562643968
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # Releasetools
 #TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/s3ve3g
 
 # SELinux
-#-include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += device/samsung/ms013g/sepolicy
+-include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/samsung/matissewifi/sepolicy
 
 #BOARD_SEPOLICY_UNION += \
 #       hostapd.te \

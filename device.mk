@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/samsung/ms013g
+LOCAL_PATH := device/samsung/matissewifi
+
+PRODUCT_CHARACTERISTICS := tablet
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -30,14 +32,24 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.crda.sh \
-    init.qcom.bt.sh
-
-PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.carrier.rc \
+    init.crda.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
+    init.target.rc \
     ueventd.qcom.rc
+
+# Ramdisk
+#PRODUCT_PACKAGES += \
+#    init.crda.sh \
+#    init.qcom.bt.sh
+
+#PRODUCT_PACKAGES += \
+#    fstab.qcom \
+#    init.qcom.rc \
+#    init.qcom.usb.rc \
+#    ueventd.qcom.rc
 
 # Thermal
 PRODUCT_COPY_FILES += \
